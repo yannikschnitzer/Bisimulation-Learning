@@ -75,9 +75,9 @@ docker run -it artifact
 
 After the setup, the container should start in the `CAV24`-folder, whose structure is described in the **Structure and Content** section.
 
-The main file for running all experiments is `CAV24/BisimulationLearning/src/run.py`. Which can be run with:
+The main file for running all experiments is `CAV24/BisimulationLearning/src/run.py`, which can be run from the `src` directory with:
 ```bash
-python3.10 BisimulationLearning/src/run.py 
+python3.10 run.py 
 ```
 
 The `run.py` file can take multiple arguments defining which experiments to run:
@@ -94,7 +94,7 @@ All smoke tests ran successfully :)
 We have split the experiments into tools and benchmark times, which can be executed individually to build Tables 1 and 2. To run the experiment, run the `run.py` with the respective arguments:
 
 ```bash
-python3.10 BisimulationLearning/src/run.py -arg1 [-arg2 ...]
+python3.10 run.py -arg1 [-arg2 ...]
 ```
 
 The evaluation script has the following options:
