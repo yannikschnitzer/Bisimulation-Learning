@@ -137,7 +137,7 @@ The main claims that the artifact should validate despite nondeterminism are:
 verified by a model-checker, e.g., nuXmv. For the used benchmarks, these abstractions are very small (2-3 states). Therefore, model checking is an easy problem that can be done manually.
 
 * Comparable runtime, i.e., the same order of magnitude for the conditional termination benchmarks, while producing a more informative result. Bisimulation learning provides a bisimulation and a separation into terminating and non-terminating states. At the same time, the baseline tools can only prove termination or nontermination for the entire state space and, therefore, need to be handed separate benchmarks.
-* 
+  
 ### Correctness
 
 The abstractions obtained for the used benchmarks are very simple (mostly 2 or 3 states). They can be assessed visually (i.e., visualized conditional termination benchmarks) or by evaluating the resulting parameters (a BDT visualization is in progress).
