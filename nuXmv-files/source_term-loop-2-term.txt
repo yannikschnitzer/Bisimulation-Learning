@@ -1,0 +1,4 @@
+read_model -i ../../BisimulationLearning/nuXmv-files/term-loop-2-term.smv 
+go_msat
+check_ltlspec_ic3
+quit

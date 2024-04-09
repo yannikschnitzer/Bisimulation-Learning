@@ -1,0 +1,25 @@
+MODULE main
+
+  VAR x : integer;
+  VAR y : integer;
+
+  INIT x >= 0 & y >= 0;
+
+  INIT term = FALSE;
+  
+  ASSIGN next(x) := case
+      x > 0: x - 1;
+      x <= 0: x;
+    esac;
+
+    ASSIGN next(y) := case
+      y > 0 & x <= 0: y - 1;
+      y <= 0 | x > 0: y;
+    esac;
+
+  ASSIGN next(term) := case
+    x <= & y <= 0 : TRUE;
+    x > 0 || y > 0 : term;
+  esac;
+
+ 

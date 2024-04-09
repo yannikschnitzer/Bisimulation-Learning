@@ -1,0 +1,19 @@
+MODULE main
+
+  VAR x : integer;
+
+  VAR term : boolean;
+
+  INIT term = FALSE;
+  
+  ASSIGN next(x) := case
+      x * x * x * x * x <= 100 : x * x * x;
+      x * x * x * x *x > 100: x
+    esac;
+
+  ASSIGN next(term) := case
+    x * x * x * x * x > 100: TRUE;
+    x * x * x * x * x <= 100: term;
+  esac;
+
+  LTLSPEC F(term = TRUE);

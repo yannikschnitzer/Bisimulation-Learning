@@ -1,0 +1,28 @@
+MODULE main
+
+  VAR x : integer;
+  VAR y : integer;
+  VAR z : integer;
+
+  VAR term : boolean;
+
+  INIT x >= -1000 & x<= 100;
+  INIT y >= 500 & y <= 700;
+  INIT z >= 500 & z <= 700;
+
+  INIT term = FALSE;
+  
+  ASSIGN next(x) := case
+     (x < y | x < z): x + 1;
+     (x >= y & x >= z): x;
+    esac;
+
+  ASSIGN next(y) := y;
+  ASSIGN next(z) := z;
+
+  ASSIGN next(term) := case
+    x < y | x < z: term;
+    x >= y & x >= z: TRUE;
+  esac;
+
+  LTLSPEC F(term = TRUE);

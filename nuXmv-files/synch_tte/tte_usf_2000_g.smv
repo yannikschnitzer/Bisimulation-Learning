@@ -1,0 +1,19 @@
+MODULE main
+VAR
+    x : 0..2000;
+    y : 0..5000;
+    a : boolean;
+    b : boolean;
+
+INIT x >= 0 & x <= 1600;
+INIT y >= 0 & y <= 1;
+INIT a = FALSE;
+
+
+TRANS TRUE -> case
+                    y - x <= 2000 & x != 2000: next(x) = x + 1 & next(y) = y + 2 & next(a) = a;
+                    y - x <= 2000 & x = 2000: next(x) = x + 1 & next(y) = y + 2 & next(a) = a;
+                    y - x > 2000: next(x) = x & next(y) = y & next(a) = TRUE;
+                esac;
+--LTLSPEC G(F(x = y));
+LTLSPEC G(a = FALSE);

@@ -1,0 +1,25 @@
+MODULE main
+
+  VAR x : integer;
+  VAR y : integer;
+
+  VAR term : boolean;
+
+  INIT x >= 200 & x <= 200;
+  INIT y >= 100 & y <= 100;
+
+  INIT term = FALSE;
+  
+  ASSIGN next(x) := case
+      x <= y: x - 1;
+      x > y: x;
+    esac;
+
+  ASSIGN next(y) := y;
+
+  ASSIGN next(term) := case
+    x < 0: TRUE;
+    x >= 0: term;
+  esac;
+
+  LTLSPEC F(term = TRUE);

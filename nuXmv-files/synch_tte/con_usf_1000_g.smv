@@ -1,0 +1,26 @@
+MODULE main
+
+DEFINE
+    r := 1000;
+VAR
+    x : 0..r;
+    y : 0..2500;
+    a : boolean;
+    b : boolean;
+
+
+
+INIT x >= 100 & x <= 900;
+INIT y >= 0 & y <= 102;
+INIT a = FALSE;
+
+
+TRANS TRUE -> case
+                      y - x <= r &  x != 500 & x != r: next(x) = x + 1 & next(y) = y + 2 & next(a) = a;
+                      y - x <= r & (x = 500 | x = r) & x - y <= 500 & y - x <= 500: next(x) = x + 1 & next(y) = x + 2 & next(a) = a;
+                      y - x <= r & (x = 500 | x = r) & (x - y > 500| y - x > 500): next(x) = x + 1 & next(y) = y + 2 & next(a) = a;
+                      y - x > r: next(x) = x & next(y) = y & next(a) = TRUE;
+                esac;
+
+--LTLSPEC G(F(x = y));
+LTLSPEC G(a = FALSE);

@@ -1,0 +1,19 @@
+MODULE main
+VAR
+    x : 0..10;
+    y : 0..25;
+    a : boolean;
+    b : boolean;
+
+INIT x >= 0 & x <= 8;
+INIT y >= 0 & y <= 0;
+INIT a = FALSE;
+
+
+TRANS TRUE -> case
+                    y - x <= 10 & x != 10: next(x) = x + 1 & next(y) = y + 2 & next(a) = a;
+                    y - x <= 10 & x = 10: next(x) = 0 & next(y) = 0 & next(a) = a;
+                    y - x > 10: next(x) = x & next(y) = y & next(a) = TRUE;
+                esac;
+LTLSPEC G(F(x = y));
+--LTLSPEC G(a = FALSE);

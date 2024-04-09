@@ -1,0 +1,4 @@
+read_model -i ../../BisimulationLearning/nuXmv-files/synch_tte/tte_usf_100_gf.smv 
+go
+check_ltlspec
+quit

@@ -1,0 +1,21 @@
+MODULE main
+
+  VAR x : integer;
+
+  VAR term : boolean;
+
+  INIT x >= 0 & x<= 1000;
+
+  INIT term = FALSE;
+  
+  ASSIGN next(x) := case
+      x <= 0: x;
+      x > 0: 2 * x;
+    esac;
+
+  ASSIGN next(term) := case
+    x < 0 |x >= 1073741824  : TRUE;
+    x >= 0 & x < 1073741824: term;
+  esac;
+
+ 

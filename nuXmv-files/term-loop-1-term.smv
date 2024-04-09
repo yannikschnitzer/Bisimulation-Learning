@@ -1,0 +1,17 @@
+-- term-loop-1
+
+MODULE main
+VAR x : integer;
+VAR term : boolean;
+
+INIT x >= 5000 & x <= 8000;
+INIT term = FALSE;
+
+TRANS TRUE -> case
+                    x = 0 | term = TRUE: next(x) = x & next(term) = TRUE;
+                    x != 0 & term = FALSE: next(x) = x - 1 & next(term) = term;
+                esac;
+LTLSPEC F(term = TRUE);
+
+
+
