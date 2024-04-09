@@ -169,16 +169,16 @@ With these two ingredients, one can follow the style of the `experiment_runner.p
 ## Dependencies and Libraries
 Bisimulation Learning builds up on the following dependencies and libraries (most recent versions):
 
-  * [Z3 Solver]("https://github.com/Z3Prover/z3") - SMT Solver used for Bisimulation Learning. Used in Learner and Verifier.
-  * [NumPy]("https://github.com/numpy/numpy") - Used internally for tensor and list operations.
-  * [matplotlib]("https://matplotlib.org/") - Used for visualizing the resulting partition of 2D benchmarks.
-  * [NetworkX]("https://networkx.org/documentation/stable/index.html") - Used for visualizing the resulting quotients.
+  * [Z3 Solver](https://github.com/Z3Prover/z3) - SMT Solver used for Bisimulation Learning. Used in Learner and Verifier.
+  * [NumPy](https://github.com/numpy/numpy) - Used internally for tensor and list operations.
+  * [matplotlib](https://matplotlib.org/) - Used for visualizing the resulting partition of 2D benchmarks.
+  * [NetworkX](https://networkx.org/documentation/stable/index.html) - Used for visualizing the resulting quotients.
 
 Links to baseline tools:
 
-  * [Ultimate Automizer]("https://github.com/ultimate-pa/ultimate")
-  * [CPAChecker]("https://cpachecker.sosy-lab.org/index.php")
-  * [nuXmv](https://nuxmv.fbk.eu/"")
+  * [Ultimate Automizer](https://github.com/ultimate-pa/ultimate)
+  * [CPAChecker](https://cpachecker.sosy-lab.org/index.php)
+  * [nuXmv](https://nuxmv.fbk.eu/)
 
 ## License
 
