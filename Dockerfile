@@ -49,5 +49,5 @@ RUN make && \
 
 # Get artifact and libraries 
 WORKDIR /CAV24 
-RUN git clone https://github.com/yannikschnitzer/BisimulationLearning.git 
-RUN pip install -r BisimulationLearning/requirements.txt
+RUN git clone https://github.com/yannikschnitzer/Bisimulation-Learning.git 
+RUN pip install -r Bisimulation-Learning/requirements.txt
