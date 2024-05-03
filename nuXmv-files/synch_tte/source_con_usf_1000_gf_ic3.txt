@@ -1,4 +1,4 @@
-read_model -i ../../BisimulationLearning/nuXmv-files/synch_tte/con_usf_1000_gf.smv 
+read_model -i ../../Bisimulation-Learning/nuXmv-files/synch_tte/con_usf_1000_gf.smv 
 go_msat
 build_boolean_model
 check_ltlspec_ic3

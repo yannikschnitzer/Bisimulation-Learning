@@ -1,4 +1,4 @@
-read_model -i ../../BisimulationLearning/nuXmv-files/greater-nonterm.smv 
+read_model -i ../../Bisimulation-Learning/nuXmv-files/greater-nonterm.smv 
 go_msat
 check_ltlspec_ic3
 quit

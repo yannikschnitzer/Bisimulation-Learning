@@ -1,4 +1,4 @@
-read_model -i ../../BisimulationLearning/nuXmv-files/synch_tte/tte_sf_10000_g.smv 
+read_model -i ../../Bisimulation-Learning/nuXmv-files/synch_tte/tte_sf_10000_g.smv 
 go
 check_ltlspec
 quit

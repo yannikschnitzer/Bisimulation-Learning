@@ -1,4 +1,4 @@
-read_model -i ../../BisimulationLearning/nuXmv-files/disjunct.smv 
+read_model -i ../../Bisimulation-Learning/nuXmv-files/disjunct.smv 
 go_msat
 check_ltlspec_ic3
 quit
