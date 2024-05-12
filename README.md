@@ -1,7 +1,7 @@
 
-# Artifact Bisimulation Learning
+# Bisimulation Learning
 
-This is the artifact for the paper **"Bisimulation Learning"** (CAV 2024, Paper #4578). 
+This is the artifact for the paper **"Bisimulation Learning"** (CAV 2024). 
 
 The corresponding Git repository is: https://github.com/yannikschnitzer/Bisimulation-Learning
 
