@@ -4,18 +4,26 @@ from bisimulation_learning.shared import *
     
 
 def run_and_show(trs, tem):
-    theta, eta = bisimulation_learning(trs, tem, iters=100, explicit_classes=True)
+    theta, eta = bisimulation_learning(trs, tem, iters=10000, explicit_classes=True)
     gamma = compute_adjacency_matrix(trs, tem, theta)
     draw_quotient(gamma, "Default Name")
     visualize_branching(theta, tem)
 
 def run_and_print(trs, tem: BDTTemplate):
-    theta, eta = bisimulation_learning(trs, tem, iters=100, explicit_classes=True)
+    start_time = time.time()  # Record the start time
+    theta, eta = bisimulation_learning(trs, tem, iters=10000, explicit_classes=False)
+    end_time = time.time()
     print(f"""
     theta = {theta},
     eta   = {eta} 
     """)
+    print("Runtime Learning: " ,(end_time-start_time))
+
+    start_time = time.time()
     gamma = compute_adjacency_matrix(trs, tem, theta)
+    end_time = time.time()
+    print("Runtime Quotient Extraction: " ,(end_time-start_time))
+
     for p in range(len(gamma)):
         for q in range(len(gamma[p])):
             if gamma[p][q]:
@@ -28,15 +36,25 @@ def run_and_print(trs, tem: BDTTemplate):
     
 
 if __name__ == "__main__":
-    # trs, tem = cubic()
-    # trs, tem = euclid()
-    # trs, tem = tte_sf(1000)
+    
+    
     # trs, tem = tte_usf(10)
-    # trs, tem = con_sf(1000)
-    # trs, tem = con_usf(10)
-    trs, tem = term_loop_nd()
-    # trs, tem = term_loop_nd_2()
-    # trs, tem = term_loop_nd_y()
-    # run_and_show(trs, tem)
-    run_and_print(trs, tem)
+    #trs, tem = con_sf(10000)
+    n = 10
+    start_time = time.time()
+    for i in range(n):
+        #trs, tem = term_loop_2()
+        #trs, tem = cubic()
+        # trs, tem = tte_sf(100)
+        trs, tem = con_usf(1000)
+        #trs, tem = P18()
+        #trs, tem = term_loop_nd_2()
+        #trs, tem = term_loop_nd_y()
+        #run_and_show(trs, tem)
+        print("========================")
+        run_and_print(trs, tem)
+        print("========================")
+        print("")
+    end_time = time.time()
+    print("Average runtime all in all: ", (end_time-start_time)/n)
     
